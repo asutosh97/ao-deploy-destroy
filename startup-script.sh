@@ -35,7 +35,7 @@ sleep 5
 response_code=$(curl --header "Content-Type: application/json" --request POST --data "{\"source_bucket_name\": \"${source_bucket_name}\", \"source_blob_name\": \"${source_blob_name}\", \"destination_bucket_name\": \"${destination_bucket_name}\", \"destination_blob_name\": \"${destination_blob_name}\"}" -s -o /dev/null -w "%{http_code}" http://0.0.0.0:8000/copy_blob/)
 # concatenate contents of old_logfile if it exists and then upload to bucket.
 touch old_logfile.txt
-gsutil cp gs://{log_bucket}/logfile.txt ./old_logfile.txt
+gsutil cp gs://${log_bucket}/logfile.txt ./old_logfile.txt
 cat old_logfile.txt > logfile.txt
 echo >> logfile.txt
 cat logs.txt >> logfile.txt
