@@ -39,7 +39,7 @@ gsutil cp gs://{log_bucket}/logfile.txt ./old_logfile.txt
 cat old_logfile.txt > logfile.txt
 echo >> logfile.txt
 cat logs.txt >> logfile.txt
-gsutil cp ./logfile.txt gs://{log_bucket}/logfile.txt
+gsutil cp ./logfile.txt gs://${log_bucket}/logfile.txt
 # if success then publish delete_instance message to pubsub
 if [ $response_code -eq 200 ]; then
 	gcloud compute instances delete ${instance_name} --zone=${zone} -q
