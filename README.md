@@ -34,7 +34,8 @@ Create an automated  deploy-destroy pipeline for the following sequence of tasks
 - Select the relevant project from the drop-down menu.
 
 ### 2. Import source code from GitHub to Cloud Source Repositories
-*Again, since I am using [ao-copy-blob](https://github.com/asutosh97/ao-copy-blob) for cloud function, I need to import that repo to Cloud Source Repository for it to be used by the cloud function. You are free to use inline editor to code the cloud function. In that case, skip to step 3.*
+
+`Again, since I am using [ao-copy-blob](https://github.com/asutosh97/ao-copy-blob) for cloud function, I need to import that repo to Cloud Source Repository for it to be used by the cloud function. You are free to use inline editor to code the cloud function. In that case, skip to step 3.`
 
 - Go to the [ao-gcp-manage-instance](https://github.com/teraflik/ao-gcp-manage-instance/) repository.
 - Fork that repository.
