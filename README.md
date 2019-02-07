@@ -25,7 +25,7 @@ Create an automated  deploy-destroy pipeline for the following sequence of tasks
 - I have used Pub/Sub as trigger for Cloud Function since I found it to be more flexible and also I could re-use my code for Pub/Sub triggering [ao-gcp-manage-instances](https://github.com/teraflik/ao-gcp-manage-instance/) which I had previously worked on. But you are free to choose any kind of triggering.
 - I am using the [ao-copy-blob](https://github.com/asutosh97/ao-copy-blob) django-webservice which copies a blob from one bucket to another, but again you are free to choose your own.
 
-### Authentication
+### 1. Authentication
 
 - Sign-in to [Google Cloud Platform](https://console.cloud.google.com/) with your Google Account having GCP credits and authority to do the following tasks
   - Create and delete instance
@@ -33,7 +33,7 @@ Create an automated  deploy-destroy pipeline for the following sequence of tasks
   - Create Cloud Functions
 - Select the relevant project from the drop-down menu.
 
-### Import source code from GitHub to Cloud Source Repositories
+### 2. Import source code from GitHub to Cloud Source Repositories
 
 - Go to the [ao-gcp-manage-instance](https://github.com/teraflik/ao-gcp-manage-instance/) repository.
 - Fork that repository.
@@ -46,7 +46,7 @@ Create an automated  deploy-destroy pipeline for the following sequence of tasks
 - Select the forked copy of this repository from the list of repositories and click **Connect selected Repository**.
 - Once the repository is connected, note down its name, which will somewhat like **github_asutosh97_ao-gcp-manage-instance**
 
-### Create Cloud Function and Pub/Sub Topic
+### 3. Create Cloud Function and Pub/Sub Topic
 
 - Go to [Cloud Functions](https://console.cloud.google.com/functions) section and click on **Create Function**.
 
@@ -69,7 +69,7 @@ Click on More to get more advanced options
 - **Timeout** :- 540
 - **Service Account** :- Leave this to default service account (which has all the required permissions).
 
-### Modify the bucket-names and file name in Pub/Sub Message and startup-script
+### 4. Modify the bucket-names and file name in Pub/Sub Message and startup-script
 
 Download both the files (pubsub-message.json and startup-script.sh) and do the following modifications.
 
@@ -83,19 +83,19 @@ Download both the files (pubsub-message.json and startup-script.sh) and do the f
 - Change the configurations as per your requirements. Don't change anything in the **scopes** section as only those scopes relevant for this project are assigned.
 - In the `value` of **startup-script-url**, give the URL to access the startup-script.
 
-### Publishing the message in Pub/Sub
+### 5. Publishing the message in Pub/Sub
 
 - Go to the [Pub/Sub Topics](https://console.cloud.google.com/cloudpubsub)
 - Click on your topic-name from the list (mine is `topic-ao-intern-deploy-destroy`)
 - Click on **Publish Message**.
 - In the message section, paste the contents of the modified **pubsub-message.json** and click **Publish**.
 
-### Monitoring
+### 6. Monitoring
 
 - You can monitor the triggering of the Cloud Function by going to the `Logs` section of that particular cloud function.
 - You can also monitor the creation and deletion of the instance in the Compute Engine section.
 
-### Verifying logfile and copied file in the bucket.
+### 7. Verifying logfile and copied file in the bucket.
 
 - Check for the copied file in the destination bucket and logfile in the log bucket.
 
