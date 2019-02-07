@@ -8,7 +8,7 @@ Create an automated  deploy-destroy pipeline for the following sequence of tasks
 
 - VM Instance creation by Cloud Function triggering.
 
-- Deployment of a django webservice on the instance.
+- Deployment of a webservice on the instance.
 
 - Testing of the webservice locally.
 
@@ -23,7 +23,7 @@ Create an automated  deploy-destroy pipeline for the following sequence of tasks
 **NOTE:-**
 
 - I have used Pub/Sub as trigger for Cloud Function since I found it to be more flexible and also I could re-use my code for Pub/Sub triggering [ao-gcp-manage-instances](https://github.com/teraflik/ao-gcp-manage-instance/) which I had previously worked on. But you are free to choose any kind of triggering.
-- I am using the [ao-copy-blob](https://github.com/asutosh97/ao-copy-blob) django-webservice which I had written earlier, but again you are free to choose your own.
+- I am using the [ao-copy-blob](https://github.com/asutosh97/ao-copy-blob) django-webservice which copies a blob from one bucket to another, but again you are free to choose your own.
 
 ### Authentication
 
@@ -92,7 +92,7 @@ Download both the files (pubsub-message.json and startup-script.sh) and do the f
 
 ### Monitoring
 
-- You can monitor the triggering of the Cloud Function in the `Logs` section of that particular cloud function.
+- You can monitor the triggering of the Cloud Function by going to the `Logs` section of that particular cloud function.
 - You can also monitor the creation and deletion of the instance in the Compute Engine section.
 
 ### Verifying logfile and copied file in the bucket.
