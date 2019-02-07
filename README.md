@@ -55,12 +55,12 @@ Create an automated  deploy-destroy pipeline for the following sequence of tasks
 - **Name** :- cf-ao-intern-deploy-destroy
 - **Memory** :- 512MB
 - **Trigger** :- Cloud Pub/Sub
-- **Topic** :- Create new topic ---> **name** :- topic-ao-intern-deploy-destroy
+- **Topic** :- Create new topic with **name** :- topic-ao-intern-deploy-destroy
 - **Source Code** :- Cloud Source Repository
 - **Runtime** :- Python 3.7 (Beta)
 - **Repository** :- Name of your repository in Cloud Source Repositories noted down in previous section.
 - **Branch** :- master
-- **Directory with source code** :- /
+- **Directory with source code** :- `/`
 - **Function to execute** :- cf_manage_instance
 
 Click on More to get more advanced options
