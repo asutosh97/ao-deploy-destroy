@@ -8,7 +8,7 @@ Create an automated  deploy-destroy pipeline for the following sequence of tasks
 
 - VM Instance creation by Cloud Function triggering.
 
-- Deployment of a django webservice on the instance that copies files from one bucket to another.
+- Deployment of a django webservice on the instance.
 
 - Testing of the webservice locally.
 
